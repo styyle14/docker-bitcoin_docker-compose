@@ -1,0 +1,13 @@
+version: '3'
+services:
+	bitcoin-qt:
+		extends:
+			file: bitcoin.yaml
+			service: bitcoin
+		command: bitcoin-qt -datadir="${PWD}"; rm -f .lock
+		volumes:
+			- "${HOME}/.Xauthority:/tmp/.Xauthority"
+			- "/tmp/.X11-unix:/tmp/.X11-unix"
+		environment:
+			- "DISPLAY:${DISPLAY}"
+			- "XAUTHORITY:/tmp/.Xauthority"
