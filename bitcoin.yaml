@@ -1,13 +1,13 @@
-version: '3'
+version: '2'
 services:
-	bitcoin:
-		build:
-			context: ./build/docker-bitcoin-qt
-			dockerfile: Dockerfile
-			args:
-				username: "${username}"
-		image: bitcoin:latest
-		ports:
-			- "8333:8333"
-		volumes:
-			- "./run/datadir:/home/${username}/datadir"
+   bitcoin:
+      build:
+         context: ./build/docker-bitcoin-qt
+         dockerfile: Dockerfile
+         args:
+            username: "bitcoin"
+      image: bitcoin:latest
+      ports:
+         - "8333:8333"
+      volumes:
+         - "./run/datadir:/home/${username}/datadir"

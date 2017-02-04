@@ -1,7 +1,0 @@
-version: '3'
-services:
-	bitcoin-qt:
-		extends:
-			file: bitcoin.yaml
-			service: bitcoin
-		command: bitcoind -datadir="${PWD}"; rm -f .lock
