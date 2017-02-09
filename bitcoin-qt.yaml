@@ -7,9 +7,9 @@ services:
       command: bash -c "bitcoin-qt -datadir=./; rm -f .lock"
       volumes:
          - "./run/datadir:/home/bitcoin/datadir"
-         - "${HOME}/.Xauthority:/tmp/.Xauthority"
+         - "${HOME}/.Xauthority:/home/.Xauthority"
          - "/tmp/.X11-unix:/tmp/.X11-unix"
       environment:
          - "DISPLAY=${DISPLAY}"
-         - "XAUTHORITY=/tmp/.Xauthority"
+         - "XAUTHORITY=/home/.Xauthority"
 
